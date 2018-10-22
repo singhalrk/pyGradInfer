@@ -12,4 +12,8 @@ Imagine having observations of an apple falling on the moon, and where
 we know the system of equations, this would module would give you the
 gravitational constant.
 
-These kind of problems are popular in systems biology where
+These kind of problems are popular in systems biology where we have some prior
+knowledge on the system of equations and in some cases we may have some
+knowledge of the parameters or in some cases we may not be able to observe all
+the states. For this reason we use a technique called Gaussian Process Gradient
+Matching
