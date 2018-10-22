@@ -11,3 +11,5 @@ noisy and/or incomplete observations.
 Imagine having observations of an apple falling on the moon, and where
 we know the system of equations, this would module would give you the
 gravitational constant.
+
+These kind of problems are popular in systems biology where
