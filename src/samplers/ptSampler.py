@@ -5,6 +5,6 @@ import multiprocess as mp
 from sampler import Sampler
 
 
-class PTsampler(Sampler):
+class ParallelTempering(Sampler):
     def __init__(self):
         pass
