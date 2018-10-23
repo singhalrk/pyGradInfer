@@ -14,3 +14,6 @@ class Sampler:
 
     def step(self, ):
         raise NotImplementedError
+
+    def trace_plots(self,):
+        raise NotImplementedError
