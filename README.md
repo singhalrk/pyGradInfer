@@ -16,4 +16,4 @@ These kind of problems are popular in systems biology where we have some prior
 knowledge on the system of equations and in some cases we may have some
 knowledge of the parameters or in some cases we may not be able to observe all
 the states. For this reason we use a technique called Gaussian Process Gradient
-Matching
+Matching.
