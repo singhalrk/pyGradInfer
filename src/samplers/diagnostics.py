@@ -2,6 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-class Diagnostics:
-    def __init__(self):
-        pass
+def stein():
+    pass
+
+
+def kolmogorov():
+    pass
+
+
+def rubin_gelman():
+    pass
