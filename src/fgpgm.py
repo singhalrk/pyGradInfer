@@ -27,7 +27,6 @@ from mcmc import MCMCBounded
 """
 
 
-
 class FGPGM:
     def __init__(self,  Y_loc, time_loc,
                  sigma=None,
@@ -184,7 +183,7 @@ class FGPGM:
             sns.distplot(param, ax=ax[0, i])
             ax[1, i].plot(param)
 
-        plt.savefig(f'plots/trace_{trace_name}')
+        # plt.savefig(f'plots/trace_{trace_name}')
         # plt.show()
 
     def get_Matrices(self):
@@ -402,14 +401,3 @@ class FGPGM:
                     theta_samples=None, trace_name=None):
 
         raise NotImplementedError
-
-
-def print_params(true_param, estim_param, pname, index):
-    mean = estim_param.copy()
-    for i in index:
-        mean[i] = round(mean[i], 3)
-
-    mean[2] = round(mean[2], 10)
-
-    for p1, p2, name in zip(true_param, mean, pname):
-        print(f'true {name} = {p1}, predicted {name} = {p2}')
