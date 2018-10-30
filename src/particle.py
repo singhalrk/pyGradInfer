@@ -1,6 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 from scipy.stats import rv_discrete
 
 import ode_solvers as solvers
@@ -20,14 +18,16 @@ def propogation(Xprev, Theta, Wn, eps,
     # number of particles
     nParticles = Xprev.shape[0]
 
-    averageTheta = (Wn * Theta).sum(axis=0)    # average Theta with Wn
+    # average Theta with Wn
+    averageTheta = (Wn * Theta).sum(axis=0)
 
     assert averageTheta.shape[1] == Theta.shape[1] == nParticles
 
     # shrink parameters
     newTheta = shrinkage * Theta + (1 - shrinkage) * averageTheta
 
-    Xnext = propOperator(Xprev, newTheta, evol_params)    # get next step
+    # get next step
+    Xnext = propOperator(Xprev, newTheta, evol_params)
 
     return Xnext
 
@@ -52,7 +52,8 @@ def survival(Xn, Theta, Wn, eps, posterior):
 
 def proliferation(Xn, Theta, Wn, eps, shrinkage,
                   covFunction, propOperator, errorControl):
-    Cn = covFunction(Wn, Theta)   # covariance matrix for Theta particles
+    # covariance matrix for Theta particles
+    Cn = covFunction(Wn, Theta)
 
     # Sample new theta
     newTheta = Theta.copy() + np.random.multivariate_normal(mean=0,
