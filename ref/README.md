@@ -1,6 +1,6 @@
 # Refernecs For pyGradInfer
 
-## particle filter
+## Particle Filter
 
   * [learning of dynamical systems](http://www.it.uu.se/research/systems_and_control/education/2017/smc/SMC2017.pdf)
   * [sequential monte carlo methods](http://www.stats.ox.ac.uk/~doucet/samsi_course.html)
