@@ -1,6 +1,6 @@
 import ode_solvers as solvers
-from weinberger_params import Weinberger_Params as params
-import weinberger_params as Xinit
+from sample_params import Sample_Params as params
+import sample_params as Xinit
 
 import numpy as np
 import os

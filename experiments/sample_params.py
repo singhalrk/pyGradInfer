@@ -24,14 +24,11 @@ K = 2e+6
 
 X0 = np.array([U0, I0, V0, s0])
 
-Weinberger_Params = Parameters(d=d,
-                               K=K,
-                               k=k,
-                               q_max=q_max,
-                               b_max=b_max,
-                               p=p,
-                               c=c,
-                               delta=delta)
-
-
-# fix feed
+Sample_Params = Parameters(d=d,
+                           K=K,
+                           k=k,
+                           q_max=q_max,
+                           b_max=b_max,
+                           p=p,
+                           c=c,
+                           delta=delta)
