@@ -24,7 +24,7 @@ def propogation(Xprev, Theta, Wn, eps,
     assert averageTheta.shape[1] == Theta.shape[1] == nParticles
 
     # shrink parameters
-    newTheta = shrinkage * Theta + (1 - shrinkage) * averageTheta
+    newTheta = shrinkage*Theta + (1 - shrinkage)*averageTheta
 
     # get next step
     Xnext = propOperator(Xprev, newTheta, evol_params)
