@@ -17,7 +17,6 @@ I0 = 0
 V0 = 1e+6
 s0 = 8e+5 * 10
 
-# TODO change these to dimensional
 b_max = 40
 q_max = 25
 K = 2e+6

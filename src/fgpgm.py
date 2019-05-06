@@ -1,30 +1,16 @@
-import numpy as np
-from tqdm import tqdm
 import argparse
-import matplotlib.pyplot as plt
-from scipy.stats import multivariate_normal
-import seaborn as sns
 import multiprocessing as mp
 
-from kernels.rbf import RBF
-from kernels.sigmoid import Sigmoid
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+from scipy.stats import multivariate_normal
+from tqdm import tqdm
 
 import ode_solvers as solvers
+from kernels.rbf import RBF
+from kernels.sigmoid import Sigmoid
 from mcmc import MCMCBounded
-# from lotka_volterra import LotkaVolterra
-
-
-# TODO list
-"""
-  - [ ] TODO write prior for theta
-
-  - [x] use log-normal to sample for parameters
-  - [ ] TODO figure out proposals and parameters for log-normal
-  - [x] try fixing certain values instead of sampling (in mcmc.sample_Prop)
-  - [ ] find good interpolation algorithm for V and s
-  - [ ] find scipy SEED
-  - [ ] use george for GP regression
-"""
 
 
 class FGPGM:
@@ -279,7 +265,6 @@ class FGPGM:
             CPhi_k = CPhi_matrices[k]    # cov of x_k GP Prior
             m_noX_k = m_noX_matrices[k]
 
-            # x_k = X.T[k]
             x_k = X[k]
 
             m_k = m_noX_k.dot(x_k)  # mean of derivative of GP
@@ -309,7 +294,6 @@ class FGPGM:
 
     def get_Arg(self, X, Theta, arr=None):
         arr = []
-
         for param in Theta:
             arr.append(param)
 
@@ -320,8 +304,6 @@ class FGPGM:
 
     def get_samples(self, x0, nSamples=1000, nBurnin=100):
         """implements mcmc with bounds"""
-
-        # logP = self.logPosterior  # find right argument
 
         # load fixed values
         fixed_indices = self.fixed_indices
@@ -390,7 +372,7 @@ class FGPGM:
                                    nSamples=nSamples,
                                    nBurnin=nBurnin)
 
-        theta, X, theta_samples, X_samples = self.get_results(samples)
+        theta, X, theta_samples, _ = self.get_results(samples)
 
         theta_samples = np.array(theta_samples)
 

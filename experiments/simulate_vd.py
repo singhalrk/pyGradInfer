@@ -1,11 +1,14 @@
-import ode_solvers as solvers
-from sample_params import Sample_Params as params
-import sample_params as Xinit
-
-import numpy as np
 import os
+import sys
+
 import matplotlib.pyplot as plt
+import numpy as np
 import seaborn as sns
+
+import ode_solvers as solvers
+import sample_params as Xinit
+from sample_params import Sample_Params as params
+sys.path.append("../src/")
 sns.set()
 
 
@@ -77,7 +80,6 @@ class ViralDynamics:
         xCurr = x0.copy()
 
         for t in range(steps - 1):
-
             xCurr = solvers.euler(xCurr, f, eps=eps, params=theta)
             path.append(xCurr)
 
@@ -89,8 +91,6 @@ class ViralDynamics:
     def get_observations(self, theta=None, x0=None, T=2,
                          eps=1e-3, sigma=5e+4, nObs=10,
                          prod=None):
-        """use dimensionless equations to model stuff"""
-
         x, t = self.get_trajectory(x0=x0, T=T, eps=eps,
                                    theta=theta, prod=prod)
 

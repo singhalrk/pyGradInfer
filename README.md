@@ -2,7 +2,7 @@
 
 
 This is a python implementation of [deGradInfer](https://cran.r-project.org/web/packages/deGradInfer)
-and an incorporates methods from the latest research papers.
+and incorporates methods from the latest research papers.
 This is performing parameter estimation in non-linear ordinary differential
 equation models, where we have noisy observations and are aware of the
 system of equations but not aware of the parameters, and the task is to infer
